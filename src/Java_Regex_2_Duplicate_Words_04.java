@@ -99,8 +99,8 @@ public class Java_Regex_2_Duplicate_Words_04 {
 
     public static void main(String[] args) {
 
-        String regex = "/* Write a RegEx matching repeated words here. */";
-        Pattern p = Pattern.compile(regex, /* Insert the correct Pattern flag here.*/);
+        String regex = "\\b(\\w+)(?:\\W+\\1\\b)+";
+        Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
 
         Scanner in = new Scanner(System.in);
         int numSentences = Integer.parseInt(in.nextLine());
@@ -112,7 +112,7 @@ public class Java_Regex_2_Duplicate_Words_04 {
             
             // Check for subsequences of input that match the compiled pattern
             while (m.find()) {
-                input = input.replaceAll(/* The regex to replace */, /* The replacement. */);
+                input = input.replaceAll(m.group(), m.group(1));
             }
             
             // Prints the modified sentence.

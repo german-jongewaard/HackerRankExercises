@@ -1,5 +1,6 @@
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /*
  * Está actualizando la política de nombre de usuario en la plataforma de red 
@@ -103,6 +104,7 @@ public class Valid_Username_Regular_Expression_05 {
 class UsernameValidator {
     /*
      * Write regular expression here.
-     */
-    public static final String regularExpression = null;
+     */   
+     public static final String regularExpression = "([a-zA-Z])(\\w){7,29}";
+    
 }
